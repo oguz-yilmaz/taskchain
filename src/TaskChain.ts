@@ -1,41 +1,41 @@
 import AbstractTask from './AbstractTask'
 
 export interface Options {
-	allowMultipleRun: boolean
+    allowMultipleRun: boolean
 }
 
 export default class TaskChain<ParameterType> {
-	private entryPoint: AbstractTask | null = null
+    private entryPoint: AbstractTask | null = null
 
-	constructor(
-		private parameters: ParameterType,
-		private options: Options = {
-			allowMultipleRun: true
-		}
-	) {}
+    constructor(
+        private parameters: ParameterType,
+        private options: Options = {
+            allowMultipleRun: true
+        }
+    ) {}
 
-	get allowMultipleRun() {
-		return this.options.allowMultipleRun
-	}
+    get allowMultipleRun() {
+        return this.options.allowMultipleRun
+    }
 
-	get params() {
-		return this.parameters
-	}
+    get params() {
+        return this.parameters
+    }
 
-	public registerTask(task: AbstractTask): this {
-		if (this.entryPoint instanceof AbstractTask) {
-			this.entryPoint.registerNextTask(task)
-		} else {
-			this.entryPoint = task
-		}
+    public registerTask(task: AbstractTask): this {
+        if (this.entryPoint instanceof AbstractTask) {
+            this.entryPoint.registerNextTask(task)
+        } else {
+            this.entryPoint = task
+        }
 
-		return this
-	}
+        return this
+    }
 
-	public processChain<T = any>(): T | undefined {
-		return this.entryPoint?.process<ParameterType>(
-			this.parameters,
-			this.options
-		)
-	}
+    public processChain<T = any>(): T | undefined {
+        return this.entryPoint?.process<ParameterType>(
+            this.parameters,
+            this.options
+        )
+    }
 }
