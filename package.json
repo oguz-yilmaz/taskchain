@@ -8,7 +8,9 @@
     },
     "scripts": {
         "run": "tsc",
-        "test": "jest"
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch"
     },
     "devDependencies": {
         "@types/jest": "^29.2.3",
