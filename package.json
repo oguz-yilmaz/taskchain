@@ -2,8 +2,8 @@
     "name": "@o.yilmaz/taskchain",
     "version": "1.0.2",
     "description": "Enables you to register tasks with conditions to run.",
-    "main": "./build/index.js",
-    "types": "./build/index.d.ts",
+    "main": "./build/src/index.js",
+    "types": "./build/src/index.d.ts",
     "repository": "https://github.com/oguz-yilmaz/taskchain",
     "keywords": [
         "tasks",
