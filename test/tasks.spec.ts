@@ -1,19 +1,69 @@
 import TaskChain from '@taskchain/TaskChain'
-import { MockParameterType, MockReturnType } from './tasks/MockTypes'
-import Task1 from './tasks/Task1'
-// import Task2 from './tasks/Task2'
-// import Task3 from './tasks/Task3'
+import {
+	MockParameterTypeTask1,
+	MockParameterTypeTask3,
+	MockReturnTypeTask1,
+	MockReturnTypeTask3,
+	Task1,
+	Task2,
+	Task3
+} from './stubs/index'
 
 test('Runs single task', async () => {
 	const task1 = new Task1()
 
-	const chain = new TaskChain<MockParameterType>({
+	const chain = new TaskChain<MockParameterTypeTask1>({
 		param1: true,
 		param2: 'test'
 	})
 	chain.registerTask(task1)
 
-	const res = chain.processChain<MockReturnType>()
+	const res = chain.processChain<MockReturnTypeTask1>()
+
+	expect(res).toStrictEqual({
+		run: true
+	})
 })
 
-test('Runs multiple task', async () => {})
+test('Returns the last task`s return value if allowMultipleRun is set to true', async () => {
+	const task1 = new Task1()
+	const task2 = new Task2()
+	const task3 = new Task3()
+
+	const chain = new TaskChain<MockParameterTypeTask3>({
+		param1: true,
+		param2: 'test'
+	})
+	chain.registerTask(task1).registerTask(task2).registerTask(task3)
+
+	const res = chain.processChain<MockReturnTypeTask3>()
+
+	expect(res).toStrictEqual({
+		returnValueOfTask3: true
+	})
+})
+
+test('Runs multiple task', async () => {
+	const task1 = new Task1()
+	const task2 = new Task2()
+	const task3 = new Task3()
+
+	const chain = new TaskChain({
+		param1: true,
+		param2: 'test'
+	})
+
+	try {
+		chain
+			.registerTask(task1)
+			.registerTask(task2)
+			.registerTask(task3)
+			.processChain()
+	} catch (e) {
+		console.log('Error occured', e)
+	}
+
+	expect(task1.isRun).toBe(true)
+	expect(task2.isRun).toBe(true)
+	expect(task3.isRun).toBe(true)
+})
