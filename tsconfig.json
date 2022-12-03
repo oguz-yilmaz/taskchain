@@ -4,11 +4,13 @@
 		"module": "ESNext",
 		"baseUrl": ".",
 		"rootDir": ".",
+		"outDir": "./build",
+		"declaration": true,
 		"allowJs": true,
 		"paths": {
 			"@taskchain/*": ["./src/*"]
 		},
-		"noEmit": true,
+		"noEmit": false,
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,
