@@ -4,16 +4,25 @@
     "description": "Enables you to register tasks with conditions to run.",
     "main": "./build/index.js",
     "types": "./build/index.d.ts",
+    "repository": "https://github.com/oguz-yilmaz/taskchain",
+    "keywords": [
+        "tasks",
+        "dispatcher",
+        "chain",
+        "task"
+    ],
     "directories": {
         "test": "test"
     },
     "files": [
-        "build/**/*"
+        "build/**/*",
+        "!build/**/*.map",
+        "!build/**/*.spec.*"
     ],
     "scripts": {
         "rimraf": "./node_modules/rimraf/bin.js",
         "clean": "rimraf -rf build/*",
-        "build": "npm run clean && npx tsc --build",
+        "build": "npm run clean && npx tsc -b .",
         "test": "jest",
         "test:watch": "jest --watch",
         "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch"
@@ -34,5 +43,8 @@
         "typescript": "^4.8.4"
     },
     "author": "Oguz Yilmaz <oguz.yilmaz@yahoo.com>",
-    "license": "ISC"
+    "license": "ISC",
+    "publishConfig": {
+        "access": "public"
+    }
 }
