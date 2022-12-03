@@ -53,15 +53,11 @@ test('Runs multiple task', async () => {
         param2: 'test'
     })
 
-    try {
-        chain
-            .registerTask(task1)
-            .registerTask(task2)
-            .registerTask(task3)
-            .processChain()
-    } catch (e) {
-        console.log('Error occured', e)
-    }
+    chain
+        .registerTask(task1)
+        .registerTask(task2)
+        .registerTask(task3)
+        .processChain()
 
     expect(task1.isRun).toBe(true)
     expect(task2.isRun).toBe(true)
