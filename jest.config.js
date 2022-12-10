@@ -1,8 +1,8 @@
 module.exports = {
-	preset: 'ts-jest/presets/js-with-ts-esm',
+	preset: 'ts-jest/presets/js-with-ts',
 	clearMocks: true,
 	moduleNameMapper: {
-		'^@taskchain/(.*)$': '<rootDir>/src/$1'
+		'^@tsk/(.*)$': '<rootDir>/src/$1'
 	},
 	collectCoverage: true,
 	coverageReporters: ['html'],

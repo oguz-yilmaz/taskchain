@@ -15,9 +15,9 @@
         "test": "test"
     },
     "files": [
-        "build/**/*",
-        "!build/**/*.map",
-        "!build/**/*.spec.*"
+        "build",
+        "README.md",
+        "LICENSE"
     ],
     "scripts": {
         "rimraf": "./node_modules/rimraf/bin.js",

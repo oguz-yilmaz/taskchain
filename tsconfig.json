@@ -1,15 +1,16 @@
 {
 	"compilerOptions": {
-		"target": "es6",
-		"module": "es6",
+		"target": "es5",
+		"module": "commonjs",
 		"baseUrl": ".",
 		"rootDir": ".",
 		"outDir": "./build",
 		"declaration": true,
-		"paths": {
-			"@taskchain/*": ["./src/*"]
-		},
 		"noEmit": false,
+		"allowJs": true,
+		"paths": {
+			"@tsk/*": ["./src/*"]
+		},
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
 		"strict": true,

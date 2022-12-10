@@ -1,4 +1,4 @@
-import TaskChain from '@taskchain/TaskChain'
+import { TaskChain } from '@tsk/TaskChain'
 import {
     MockParameterTypeTask1,
     MockParameterTypeTask3,
