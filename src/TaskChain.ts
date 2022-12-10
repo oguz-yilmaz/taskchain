@@ -4,7 +4,7 @@ export interface Options {
     allowMultipleRun: boolean
 }
 
-export default class TaskChain<ParameterType = any> {
+export class TaskChain<ParameterType = any> {
     private entryPoint: AbstractTask | null = null
 
     constructor(

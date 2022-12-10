@@ -1,6 +1,6 @@
 import type { Options } from './TaskChain'
 
-export default abstract class AbstractTask<RunReturnType = any> {
+export abstract class AbstractTask<RunReturnType = any> {
     protected nextTask: AbstractTask | null = null
 
     abstract shouldRun(parameters): boolean
