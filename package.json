@@ -1,6 +1,6 @@
 {
     "name": "@o.yilmaz/taskchain",
-    "version": "1.0.9",
+    "version": "1.0.10",
     "description": "Enables you to register tasks with conditions to run.",
     "main": "./build/src/index.js",
     "types": "./build/src/index.d.ts",
