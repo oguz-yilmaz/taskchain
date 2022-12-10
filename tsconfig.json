@@ -1,11 +1,10 @@
 {
 	"compilerOptions": {
-		"target": "es2022",
-		"module": "ESNext",
+		"target": "es6",
+		"module": "es6",
 		"baseUrl": ".",
 		"rootDir": ".",
 		"outDir": "./build",
-		"declaration": true,
 		"allowJs": true,
 		"paths": {
 			"@taskchain/*": ["./src/*"]

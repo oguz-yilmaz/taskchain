@@ -1,11 +1,11 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2015": true
     },
     "extends": ["airbnb-base", "eslint-config-prettier"],
     "parserOptions": {
-        "ecmaVersion": 2021,
+        "ecmaVersion": 2015,
         "sourceType": "module"
     },
     "ignorePatterns": [".eslintrc", "./build/*/**"],
