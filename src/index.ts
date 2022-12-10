@@ -1,2 +1,2 @@
-export * from './TaskChain'
-export * from './AbstractTask'
+export { TaskChain } from './TaskChain'
+export { AbstractTask } from './AbstractTask'
