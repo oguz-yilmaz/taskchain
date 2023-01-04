@@ -29,6 +29,9 @@ export class Task1 extends AbstractTask {
 
 ### Processing Tasks
 
+The `TaskChain` constructor will take object parameter which in turn  
+will be passed to each tasks each task's `shouldRun` and `run` methods.
+
 ```typescript
 const task1 = new Task1()
 const task2 = new Task2()
